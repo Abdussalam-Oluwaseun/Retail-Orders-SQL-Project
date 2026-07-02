@@ -1,0 +1,27 @@
+# Visual Studio / VS Code internal folders
+.vs/
+.vscode/
+
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Environment variables (keep secrets out of Git)
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Data files (large / downloaded files)
+*.zip
+orders.csv
+
+# OS files
+.DS_Store
+Thumbs.db
