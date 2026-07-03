@@ -76,28 +76,23 @@ The dataset (`orders.csv`) is a flat-file retail transactions table loaded into 
 ## 🔄 Project Flow
 
 ```mermaid
-flowchart TD
-    A([🗂️ Raw Data\norders.csv]) --> B[Load into\nSQL Server]
-    B --> C[Schema Definition\nSchama.sql]
-    C --> D[Data Cleaning &\nExploration\nJupyter Notebook]
-    D --> E{Analytical\nQueries\nAnalysis.sql}
+flowchart LR
+    KG["🔗 **kaggle api**\n━━━━━━━━━━━━\nDataset Source"]
+    PY["**&lt;/&gt;**\n━━━━━━━━━━━━\nPython"]
+    PD["**&lt;/&gt;**\n━━━━━━━━━━━━\nPython · Pandas"]
+    SQL[("🗄️ **SQL Server**")]
+    AN["📊 **Data Analysis\nusing SQL**"]
 
-    E --> Q1[Q1: Top 10\nRevenue Products]
-    E --> Q2[Q2: Top 5 Products\nper Region]
-    E --> Q3[Q3: MoM Sales\nGrowth 2022-2023]
-    E --> Q4[Q4: YoY MoM\nSales Comparison]
-    E --> Q5[Q5: Peak Month\nper Category]
-    E --> Q6[Q6: Sub-Category\nProfit Growth]
+    KG -->|"⬇ Download Dataset"| PY
+    PY -->|"Data Cleaning & Processing"| PD
+    PD -->|"Load data"| SQL
+    SQL -->|"Query & Analyse"| AN
 
-    Q1 --> R[Results &\nFindings]
-    Q2 --> R
-    Q3 --> R
-    Q4 --> R
-    Q5 --> R
-    Q6 --> R
-
-    R --> I[📊 Insights &\nRecommendations]
-    I --> P[📄 Analysis Report\nRetail_Orders_Analysis_Report.md]
+    style KG fill:#e8f4fd,stroke:#2196F3,stroke-width:2px,color:#000
+    style PY fill:#f5f5f5,stroke:#333,stroke-width:2px,color:#000
+    style PD fill:#f5f5f5,stroke:#333,stroke-width:2px,color:#000
+    style SQL fill:#fce4ec,stroke:#e91e8c,stroke-width:3px,color:#000
+    style AN fill:#e8f5e9,stroke:#4CAF50,stroke-width:2px,color:#000
 ```
 
 ---
